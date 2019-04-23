@@ -14,3 +14,10 @@ exports.urls = (req, res) => {
     let templateVars = { urls: urlDatabase };
     res.render("urls_index", templateVars);
 };
+
+exports.url = (req, res) => {
+    let shortURL = req.params.shortURL;
+    let templateVars = { shortURL, longURL: urlDatabase[shortURL] };
+    console.log("params", templateVars);
+    res.render("urls_show", templateVars);
+};
