@@ -7,14 +7,16 @@ var handler = require("./handlers");
 app.set("view engine", "ejs");
 
 
-
+// Home test
 app.get("/", (req, res) => {
     res.send("Hello!");
 });
 
-app.get("/urls/:shortURL", handler.url);
-
+// Routes
 app.get("/urls", handler.urls);
+app.get("/urls/new", handler.urlsNew)
+app.get("/urls/:shortURL", handler.urlsId);
+
 
 
 app.listen(PORT, () => {

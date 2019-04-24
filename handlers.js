@@ -15,9 +15,13 @@ exports.urls = (req, res) => {
     res.render("urls_index", templateVars);
 };
 
-exports.url = (req, res) => {
+exports.urlsId = (req, res) => {
     let shortURL = req.params.shortURL;
     let templateVars = { shortURL, longURL: urlDatabase[shortURL] };
     console.log("params", templateVars);
     res.render("urls_show", templateVars);
 };
+
+exports.urlsNew = (req, res ) => {
+    res.render("urls_new");
+}
